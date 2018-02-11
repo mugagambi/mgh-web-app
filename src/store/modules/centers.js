@@ -1,7 +1,8 @@
 import {
   fetchAggregationCenters,
   addAggregationCenters,
-  removeAggregationCenter
+  removeAggregationCenter,
+  updateAggregationCenter
 } from '../../http/Aggregation-Centers'
 // initial state
 const state = {
@@ -17,6 +18,7 @@ const getters = {
 const FETCH_CENTERS = 'FETCH_CENTERS'
 const ADD_CENTER = 'ADD_CENTER'
 const REMOVE_CENTER = 'REMOVE_CENTER'
+const UPDATE_CENTER = 'UPDATE_CENTER'
 
 // actions
 const actions = {
@@ -34,6 +36,11 @@ const actions = {
     await removeAggregationCenter(id).then(response =>
       commit(REMOVE_CENTER, id)
     )
+  },
+  async updateCenter ({ commit, state }, id, data) {
+    await updateAggregationCenter(id, data).then(response => {
+      commit(UPDATE_CENTER, response)
+    })
   }
 }
 // mutations
@@ -46,6 +53,15 @@ const mutations = {
   },
   [REMOVE_CENTER] (state, id) {
     state.centers = state.centers.filter(c => c.id !== id)
+  },
+  [UPDATE_CENTER] (state, center) {
+    const index = state.centers.findIndex(c => c.id === center.id)
+    if (index !== -1) {
+      // We need to replace the array entirely so that vue can recognize
+      // the change and re-render entirely.
+      // See http://vuejs.org/guide/list.html#Caveats
+      state.centers.splice(index, 1, center)
+    }
   }
 }
 export default {

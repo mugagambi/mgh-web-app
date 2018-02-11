@@ -11,7 +11,7 @@
       <el-input v-model="ruleForm.location"></el-input>
   </el-form-item>
   <el-form-item>
-    <el-button type="primary" :loading="loading" @click="submitForm('ruleForm')">{{add ? 'ADD' : 'Update'}}</el-button>
+    <el-button type="primary" :loading="loading" @click.prevent="submitForm('ruleForm')">{{add ? 'ADD' : 'Update'}}</el-button>
     <el-button type="danger" @click="resetForm('ruleForm')">Reset</el-button>
   </el-form-item>
 </el-form>
