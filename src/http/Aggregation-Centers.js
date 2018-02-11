@@ -1,11 +1,11 @@
-import axios from 'axios'
+import HTTP from './Http'
 
 export const fetchAggregationCenters = () => {
-  return axios.get(`core/aggregation-centers/`)
+  return HTTP.get(`core/aggregation-centers/`)
     .then(response => {
-      console.log(`${response}`)
+      return Promise.resolve(response.data)
     })
     .catch(e => {
-      console.log(e)
+      return Promise.reject(e)
     })
 }

@@ -1,25 +1,22 @@
-import axios from 'axios'
+import { mapGetters, mapActions } from 'vuex'
+
 export default {
   data () {
     return {
-      tableData: [],
       loading: false
     }
   },
   created () {
     this.loading = true
-    axios
-      .get(`https://mgh-system.herokuapp.com/api/core/aggregation-centers/`)
-      .then(response => {
-        this.tableData = response.data
-        this.loading = false
-      })
-      .catch(e => {
-        console.log(e)
-        this.loading = false
-      })
+    this.fetchCenters()
+      .then(() => (this.loading = false))
+      .catch(() => (this.loading = false))
   },
+  computed: mapGetters({
+    tableData: 'allCenters'
+  }),
   methods: {
+    ...mapActions(['fetchCenters']),
     handleEdit: function (params) {},
     handleDelete: function () {},
     handleAdd () {

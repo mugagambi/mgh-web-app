@@ -6,6 +6,7 @@ import router from './router'
 import ElementUI from 'element-ui'
 import './theme/index.css'
 import locale from 'element-ui/lib/locale/lang/en'
+import store from './store'
 
 Vue.config.productionTip = false
 Vue.use(ElementUI, {locale})
@@ -13,6 +14,7 @@ Vue.use(ElementUI, {locale})
 new Vue({
   el: '#app',
   router,
+  store,
   components: {App},
   template: '<App/>'
 })
