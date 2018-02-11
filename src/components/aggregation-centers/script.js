@@ -17,7 +17,9 @@ export default {
   }),
   methods: {
     ...mapActions(['fetchCenters', 'removeCenter']),
-    handleEdit: function (params) {},
+    handleEdit: function (index, row) {
+      this.$router.push({name: 'UpdateCenter', params: {id: row.id}})
+    },
     handleDelete: function (index, row) {
       const r = confirm('Are you sure you want to remove this center?')
       if (r === true) {

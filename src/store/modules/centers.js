@@ -11,7 +11,10 @@ const state = {
 
 // getters
 const getters = {
-  allCenters: state => state.centers
+  allCenters: state => state.centers,
+  getCenterById: state => id => {
+    return state.centers.find(center => center.id === id)
+  }
 }
 
 // mutation-types
@@ -37,8 +40,8 @@ const actions = {
       commit(REMOVE_CENTER, id)
     )
   },
-  async updateCenter ({ commit, state }, id, data) {
-    await updateAggregationCenter(id, data).then(response => {
+  async updateCenter ({ commit, state }, form) {
+    await updateAggregationCenter(form.id, form).then(response => {
       commit(UPDATE_CENTER, response)
     })
   }
