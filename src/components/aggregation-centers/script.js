@@ -16,9 +16,21 @@ export default {
     tableData: 'allCenters'
   }),
   methods: {
-    ...mapActions(['fetchCenters']),
+    ...mapActions(['fetchCenters', 'removeCenter']),
     handleEdit: function (params) {},
-    handleDelete: function () {},
+    handleDelete: function (index, row) {
+      const r = confirm('Are you sure you want to remove this center?')
+      if (r === true) {
+        this.removeCenter(row.id).then(() => {
+          this.$notify({
+            title: 'Success',
+            message: 'Aggregation center removed',
+            type: 'success',
+            duration: 10000
+          })
+        })
+      }
+    },
     handleAdd () {
       this.$router.push({ path: 'centers/add' })
     }

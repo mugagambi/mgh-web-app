@@ -1,6 +1,7 @@
 import {
   fetchAggregationCenters,
-  addAggregationCenters
+  addAggregationCenters,
+  removeAggregationCenter
 } from '../../http/Aggregation-Centers'
 // initial state
 const state = {
@@ -15,6 +16,7 @@ const getters = {
 // mutation-types
 const FETCH_CENTERS = 'FETCH_CENTERS'
 const ADD_CENTER = 'ADD_CENTER'
+const REMOVE_CENTER = 'REMOVE_CENTER'
 
 // actions
 const actions = {
@@ -27,6 +29,11 @@ const actions = {
     await addAggregationCenters(center).then(response =>
       commit(ADD_CENTER, response)
     )
+  },
+  async removeCenter ({ commit, state }, id) {
+    await removeAggregationCenter(id).then(response =>
+      commit(REMOVE_CENTER, id)
+    )
   }
 }
 // mutations
@@ -36,6 +43,9 @@ const mutations = {
   },
   [ADD_CENTER] (state, center) {
     state.centers.push(center)
+  },
+  [REMOVE_CENTER] (state, id) {
+    state.centers = state.centers.filter(c => c.id !== id)
   }
 }
 export default {

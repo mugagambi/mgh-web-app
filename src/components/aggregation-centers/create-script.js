@@ -25,7 +25,7 @@ export default {
           {
             required: true,
             message: 'Please input Aggregation Center Location',
-            trigger: 'change'
+            trigger: 'blur'
           }
         ]
       }

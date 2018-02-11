@@ -10,6 +10,10 @@
     :data="tableData"
     style="width: 100%">
     <el-table-column
+      prop="id"
+      label="#">
+    </el-table-column>
+    <el-table-column
       prop="name"
       label="Name">
     </el-table-column>

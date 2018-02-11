@@ -18,3 +18,10 @@ export const addAggregationCenters = data => {
     .then(response => Promise.resolve(response.data))
     .catch(e => Promise.reject(e))
 }
+
+export const removeAggregationCenter = id => {
+  return HTTP({
+    method: 'delete',
+    url: `core/aggregation-centers/${id}`
+  })
+}
