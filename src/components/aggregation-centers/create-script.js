@@ -1,6 +1,8 @@
+import { mapActions } from 'vuex'
 export default {
   data () {
     return {
+      loading: false,
       ruleForm: {
         name: '',
         location: ''
@@ -30,10 +32,23 @@ export default {
     }
   },
   methods: {
+    ...mapActions(['addCenter']),
     submitForm (formName) {
       this.$refs[formName].validate(valid => {
         if (valid) {
-          console.log(this.ruleForm)
+          this.loading = true
+          this.addCenter(this.ruleForm)
+            .then(() => {
+              this.loading = false
+              this.$notify({
+                title: 'Success',
+                message: 'Aggregation center added',
+                type: 'success',
+                duration: 10000
+              })
+              this.$router.push({ path: '/centers' })
+            })
+            .catch(() => (this.loading = false))
         } else {
           console.log('error submit!!')
           return false

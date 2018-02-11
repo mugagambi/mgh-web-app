@@ -9,3 +9,12 @@ export const fetchAggregationCenters = () => {
       return Promise.reject(e)
     })
 }
+export const addAggregationCenters = data => {
+  return HTTP({
+    method: 'post',
+    url: 'core/aggregation-centers/',
+    data: data
+  })
+    .then(response => Promise.resolve(response.data))
+    .catch(e => Promise.reject(e))
+}
