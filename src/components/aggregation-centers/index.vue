@@ -3,6 +3,7 @@
       <el-col :span="18" :offset="3">
           <h3 style="text-align: center">Aggregation Centers</h3>
           <el-button style="float: right"
+          type="primary"
           @click="handleAdd()">Add Center</el-button>
     <el-table
     v-loading="loading"
@@ -21,6 +22,7 @@
       <template slot-scope="scope">
         <el-button
           size="mini"
+          type="primary"
           @click="handleEdit(scope.$index, scope.row)">Edit</el-button>
         <el-button
           size="mini"

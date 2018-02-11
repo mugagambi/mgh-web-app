@@ -21,6 +21,9 @@ export default {
   },
   methods: {
     handleEdit: function (params) {},
-    handleDelete: function () {}
+    handleDelete: function () {},
+    handleAdd () {
+      this.$router.push({ path: 'centers/add' })
+    }
   }
 }
