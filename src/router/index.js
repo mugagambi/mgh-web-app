@@ -6,6 +6,7 @@ import CreateCenter from '@/components/aggregation-centers/create'
 import UpdateCenter from '@/components/aggregation-centers/update'
 import Products from '@/components/products/products'
 import CreateProduct from '@/components/products/create'
+import UpdateProduct from '@/components/products/update'
 
 Vue.use(Router)
 
@@ -40,6 +41,11 @@ export default new Router({
       path: '/products/add',
       name: 'CreateProduct',
       component: CreateProduct
+    },
+    {
+      path: '/products/:id/edit',
+      name: 'UpdateProduct',
+      component: UpdateProduct
     }
   ]
 })

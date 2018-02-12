@@ -27,10 +27,10 @@ export const removeProduct = id => {
     .then(response => Promise.resolve(response.data))
     .catch(e => Promise.reject(e))
 }
-export const updateAggregationCenter = (id, data) => {
+export const updateProducts = (id, data) => {
   return HTTP({
     method: 'put',
-    url: `core/aggregation-centers/${id}`,
+    url: `core/products/${id}`,
     data: data
   })
     .then(response => Promise.resolve(response.data))

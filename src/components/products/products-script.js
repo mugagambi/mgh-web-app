@@ -18,7 +18,7 @@ export default {
   methods: {
     ...mapActions(['fetchProducts', 'removeProduct']),
     handleEdit: function (index, row) {
-      this.$router.push({name: 'UpdateCenter', params: {id: row.id}})
+      this.$router.push({name: 'UpdateProduct', params: {id: row.id}})
     },
     handleDelete: function (index, row) {
       const r = confirm('Are you sure you want to remove this product?')

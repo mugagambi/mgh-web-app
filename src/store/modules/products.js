@@ -2,7 +2,7 @@ import {
   fetchProducts,
   addProducts,
   removeProduct,
-  updateAggregationCenter
+  updateProducts
 } from '../../http/Products'
 // initial state
 const state = {
@@ -12,7 +12,7 @@ const state = {
 // getters
 const getters = {
   allProducts: state => state.products,
-  getCenterById: state => id => {
+  getProductById: state => id => {
     return state.products.find(product => product.id === id)
   }
 }
@@ -40,8 +40,8 @@ const actions = {
       commit(REMOVE_PRODUCT, id)
     )
   },
-  async updateCenter ({ commit, state }, form) {
-    await updateAggregationCenter(form.id, form).then(response => {
+  async updateProduct ({ commit, state }, form) {
+    await updateProducts(form.id, form).then(response => {
       commit(UPDATE_PRODUCT, response)
     })
   }
