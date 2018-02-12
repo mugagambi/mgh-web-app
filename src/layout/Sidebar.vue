@@ -3,15 +3,18 @@
     background-color="#78EFB2"
     text-color="#020202"
     active-text-color="#020202">
-    <el-menu-item index="1" router-link-active="is-active"  @click="handleAggregation()">
-      <i class="el-icon-menu"></i>
-      <span>Aggregation Centers</span>
-    </el-menu-item>
-    <el-menu-item index="2" to="/centers" @click="handleProducts()">
+    <el-submenu index="1">
+      <template slot="title"><i class="el-icon-menu"></i>Aggregation Centers</template>
+      <el-menu-item-group>
+        <el-menu-item index="1-1" @click="handleAggregation()">Centers</el-menu-item>
+        <el-menu-item index="1-2">Products</el-menu-item>
+      </el-menu-item-group>
+    </el-submenu>
+    <el-menu-item index="2" @click="handleProducts()">
       <i class="el-icon-menu"></i>
       <span>Products</span>
     </el-menu-item>
-    <el-submenu index="1">
+    <el-submenu index="8">
       <template slot="title"><i class="el-icon-message"></i>Navigator One</template>
       <el-menu-item-group>
         <template slot="title">Group 1</template>

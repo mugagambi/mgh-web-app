@@ -15,7 +15,7 @@
     </el-table-column>
     <el-table-column
       prop="name"
-      label="Name">
+      label="Name" sortable>
     </el-table-column>
     <el-table-column
       label="Operations">

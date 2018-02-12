@@ -18,20 +18,32 @@ export default {
   methods: {
     ...mapActions(['fetchCenters', 'removeCenter']),
     handleEdit: function (index, row) {
-      this.$router.push({name: 'UpdateCenter', params: {id: row.id}})
+      this.$router.push({ name: 'UpdateCenter', params: { id: row.id } })
     },
     handleDelete: function (index, row) {
-      const r = confirm('Are you sure you want to remove this center?')
-      if (r === true) {
-        this.removeCenter(row.id).then(() => {
-          this.$notify({
-            title: 'Success',
-            message: 'Aggregation center removed',
-            type: 'success',
-            duration: 10000
+      this.$confirm(
+        'This will permanently remove the Center. Continue?',
+        'Warning',
+        {
+          confirmButtonText: 'OK',
+          cancelButtonText: 'Cancel',
+          type: 'warning'
+        }
+      )
+        .then(() => {
+          this.removeCenter(row.id).then(() => {
+            this.$message({
+              type: 'success',
+              message: 'Aggregation center removed'
+            })
           })
         })
-      }
+        .catch(() => {
+          this.$message({
+            type: 'info',
+            message: 'Remove canceled'
+          })
+        })
     },
     handleAdd () {
       this.$router.push({ path: 'centers/add' })

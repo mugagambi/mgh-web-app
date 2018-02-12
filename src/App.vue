@@ -1,21 +1,13 @@
 <template>
   <div id="app">
-    <el-container style="height: auto; border: 1px solid #eee">
-      <el-header>
-        <navbar/>
-      </el-header>
-      <el-container>
-        <el-aside width="200px">
-          <sidebar/>
-        </el-aside>
-        <el-container>
-          <el-main>
-            <router-view/>
-          </el-main>
-          <el-footer>Footer</el-footer>
-        </el-container>
-      </el-container>
-    </el-container>
+    <el-container>
+  <el-aside width="200px"><sidebar/></el-aside>
+  <el-container>
+    <el-header><navbar/></el-header>
+    <el-main><router-view/></el-main>
+    <el-footer>Footer</el-footer>
+  </el-container>
+</el-container>
   </div>
 </template>
 
