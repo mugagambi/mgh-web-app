@@ -25,12 +25,12 @@ export default {
   methods: {
     ...mapActions([
       'fetchAggregationProducts',
-      'removeCenter',
+      'removeAggregationProduct',
       'fetchProducts',
       'fetchCenters'
     ]),
     handleEdit: function (index, row) {
-      this.$router.push({ name: 'UpdateCenter', params: { id: row.id } })
+      this.$router.push({ name: 'UpdateAggregationProduct', params: { id: row.id } })
     },
     handleDelete: function (index, row) {
       this.$confirm(
@@ -43,7 +43,7 @@ export default {
         }
       )
         .then(() => {
-          this.removeCenter(row.id).then(() => {
+          this.removeAggregationProduct(row.id).then(() => {
             this.$message({
               type: 'success',
               message: 'Product removed'
@@ -58,7 +58,7 @@ export default {
         })
     },
     handleAdd () {
-      this.$router.push({ path: 'centers/add' })
+      this.$router.push({ path: '/aggregation-products/add' })
     }
   }
 }

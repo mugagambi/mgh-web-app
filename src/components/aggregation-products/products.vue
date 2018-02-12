@@ -28,7 +28,7 @@
           <p>Name: {{ $store.getters.getCenterById(scope.row.aggregation_center).name }}</p>
           <p>Location: {{ $store.getters.getCenterById(scope.row.aggregation_center).location }}</p>
           <div slot="reference" class="name-wrapper">
-            <el-tag size="medium">{{ $store.getters.getCenterById(scope.row.aggregation_center).name }}</el-tag>
+            <el-tag size="medium" type="info">{{ $store.getters.getCenterById(scope.row.aggregation_center).name }}</el-tag>
           </div>
         </el-popover>
       </template>
@@ -39,7 +39,7 @@
         <el-popover trigger="hover" placement="top">
           <p>Name: {{ $store.getters.getProductById(scope.row.product).name }}</p>
           <div slot="reference" class="name-wrapper">
-            <el-tag size="medium">{{ $store.getters.getProductById(scope.row.product).name }}</el-tag>
+            <el-tag size="medium" type="info">{{ $store.getters.getProductById(scope.row.product).name }}</el-tag>
           </div>
         </el-popover>
       </template>
@@ -47,6 +47,9 @@
     <el-table-column
       prop="active"
       label="Available">
+      <template slot-scope="scope">
+        {{scope.row.active}}
+      </template>
     </el-table-column>
     <el-table-column
       label="Operations">

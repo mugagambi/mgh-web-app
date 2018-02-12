@@ -9,28 +9,28 @@ export const fetchAggregationProducts = () => {
       return Promise.reject(e)
     })
 }
-export const addAggregationCenters = data => {
+export const addAggregationProduct = data => {
   return HTTP({
     method: 'post',
-    url: 'core/aggregation-centers/',
+    url: 'core/aggregation-centers-products/',
     data: data
   })
     .then(response => Promise.resolve(response.data))
     .catch(e => Promise.reject(e))
 }
 
-export const removeAggregationCenter = id => {
+export const removeAggregationProduct = id => {
   return HTTP({
     method: 'delete',
-    url: `core/aggregation-centers/${id}`
+    url: `core/aggregation-centers-products/${id}`
   })
     .then(response => Promise.resolve(response.data))
     .catch(e => Promise.reject(e))
 }
-export const updateAggregationCenter = (id, data) => {
+export const updateAggregationProduct = (id, data) => {
   return HTTP({
     method: 'put',
-    url: `core/aggregation-centers/${id}`,
+    url: `core/aggregation-centers-products/${id}`,
     data: data
   })
     .then(response => Promise.resolve(response.data))

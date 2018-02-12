@@ -10,6 +10,8 @@ import CreateProduct from '@/components/products/create'
 import UpdateProduct from '@/components/products/update'
 import Login from '@/components/auth/Login'
 import AggregationProducts from '@/components/aggregation-products/products'
+import CreateAgggregationProduct from '@/components/aggregation-products/create'
+import UpdateAggregationProduct from '@/components/aggregation-products/update'
 
 Vue.use(Router)
 function requireAuth (to, from, next) {
@@ -71,9 +73,20 @@ export default new Router({
       component: AggregationProducts
     },
     {
+      path: '/aggregation-products/add',
+      name: 'CreateAggregationProduct',
+      component: CreateAgggregationProduct
+    },
+    {
       path: '/login',
       name: 'LogIn',
       component: Login
+    },
+    {
+      path: '/aggregation-products/:id/edit',
+      name: 'UpdateAggregationProduct',
+      beforeEnter: requireAuth,
+      component: UpdateAggregationProduct
     }
   ]
 })
