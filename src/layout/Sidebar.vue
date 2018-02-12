@@ -7,7 +7,7 @@
       <i class="el-icon-menu"></i>
       <span>Aggregation Centers</span>
     </el-menu-item>
-    <el-menu-item index="2" to="/centers" @click="handleAggregation()">
+    <el-menu-item index="2" to="/centers" @click="handleProducts()">
       <i class="el-icon-menu"></i>
       <span>Products</span>
     </el-menu-item>

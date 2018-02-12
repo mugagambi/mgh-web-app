@@ -9,10 +9,10 @@ export const fetchProducts = () => {
       return Promise.reject(e)
     })
 }
-export const addAggregationCenters = data => {
+export const addProducts = data => {
   return HTTP({
     method: 'post',
-    url: 'core/aggregation-centers/',
+    url: 'core/products/',
     data: data
   })
     .then(response => Promise.resolve(response.data))

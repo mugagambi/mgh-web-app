@@ -1,6 +1,6 @@
 import {
   fetchProducts,
-  addAggregationCenters,
+  addProducts,
   removeAggregationCenter,
   updateAggregationCenter
 } from '../../http/Products'
@@ -19,7 +19,7 @@ const getters = {
 
 // mutation-types
 const FETCH_PRODUCTS = 'FETCH_PRODUCTS'
-const ADD_CENTER = 'ADD_CENTER'
+const ADD_PRODUCT = 'ADD_PRODUCT'
 const REMOVE_CENTER = 'REMOVE_CENTER'
 const UPDATE_CENTER = 'UPDATE_CENTER'
 
@@ -30,9 +30,9 @@ const actions = {
       commit(FETCH_PRODUCTS, response)
     )
   },
-  async addCenter ({ commit, state }, product) {
-    await addAggregationCenters(product).then(response =>
-      commit(ADD_CENTER, response)
+  async addProduct ({ commit, state }, product) {
+    await addProducts(product).then(response =>
+      commit(ADD_PRODUCT, response)
     )
   },
   async removeCenter ({ commit, state }, id) {
@@ -51,7 +51,7 @@ const mutations = {
   [FETCH_PRODUCTS] (state, products) {
     state.products = products
   },
-  [ADD_CENTER] (state, product) {
+  [ADD_PRODUCT] (state, product) {
     state.products.push(product)
   },
   [REMOVE_CENTER] (state, id) {

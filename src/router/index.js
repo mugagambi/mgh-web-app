@@ -4,6 +4,8 @@ import HelloWorld from '@/components/HelloWorld'
 import Centers from '@/components/aggregation-centers/index'
 import CreateCenter from '@/components/aggregation-centers/create'
 import UpdateCenter from '@/components/aggregation-centers/update'
+import Products from '@/components/products/products'
+import CreateProduct from '@/components/products/create'
 
 Vue.use(Router)
 
@@ -28,6 +30,16 @@ export default new Router({
       path: '/centers/:id/edit',
       name: 'UpdateCenter',
       component: UpdateCenter
+    },
+    {
+      path: '/products',
+      name: 'Products',
+      component: Products
+    },
+    {
+      path: '/products/add',
+      name: 'CreateProduct',
+      component: CreateProduct
     }
   ]
 })
