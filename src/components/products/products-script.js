@@ -16,14 +16,14 @@ export default {
     tableData: 'allProducts'
   }),
   methods: {
-    ...mapActions(['fetchProducts', 'removeCenter']),
+    ...mapActions(['fetchProducts', 'removeProduct']),
     handleEdit: function (index, row) {
       this.$router.push({name: 'UpdateCenter', params: {id: row.id}})
     },
     handleDelete: function (index, row) {
       const r = confirm('Are you sure you want to remove this product?')
       if (r === true) {
-        this.removeCenter(row.id).then(() => {
+        this.removeProduct(row.id).then(() => {
           this.$notify({
             title: 'Success',
             message: 'Product removed',

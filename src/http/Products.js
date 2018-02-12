@@ -19,10 +19,10 @@ export const addProducts = data => {
     .catch(e => Promise.reject(e))
 }
 
-export const removeAggregationCenter = id => {
+export const removeProduct = id => {
   return HTTP({
     method: 'delete',
-    url: `core/aggregation-centers/${id}`
+    url: `core/products/${id}`
   })
     .then(response => Promise.resolve(response.data))
     .catch(e => Promise.reject(e))
