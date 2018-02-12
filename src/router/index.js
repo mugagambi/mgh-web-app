@@ -9,6 +9,7 @@ import Products from '@/components/products/products'
 import CreateProduct from '@/components/products/create'
 import UpdateProduct from '@/components/products/update'
 import Login from '@/components/auth/Login'
+import AggregationProducts from '@/components/aggregation-products/products'
 
 Vue.use(Router)
 function requireAuth (to, from, next) {
@@ -62,6 +63,12 @@ export default new Router({
       name: 'UpdateProduct',
       beforeEnter: requireAuth,
       component: UpdateProduct
+    },
+    {
+      path: '/aggregation-products',
+      name: 'AggregationProducts',
+      beforeEnter: requireAuth,
+      component: AggregationProducts
     },
     {
       path: '/login',

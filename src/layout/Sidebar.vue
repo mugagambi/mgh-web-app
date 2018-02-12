@@ -7,7 +7,7 @@
       <template slot="title"><i class="el-icon-menu"></i>Aggregation Centers</template>
       <el-menu-item-group>
         <el-menu-item index="1-1" @click="handleAggregation()">Centers</el-menu-item>
-        <el-menu-item index="1-2">Products</el-menu-item>
+        <el-menu-item index="1-2" @click="handleAggregationProducts()">Products</el-menu-item>
       </el-menu-item-group>
     </el-submenu>
     <el-menu-item index="2" @click="handleProducts()">

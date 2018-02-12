@@ -6,6 +6,9 @@ export default {
     },
     handleProducts: function () {
       this.$router.push({ path: '/products' })
+    },
+    handleAggregationProducts: function () {
+      this.$router.push({path: '/aggregation-products'})
     }
   }
 }
