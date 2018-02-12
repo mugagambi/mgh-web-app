@@ -3,9 +3,13 @@
     background-color="#545c64"
     text-color="#fff"
     active-text-color="#ffd04b">
-    <el-menu-item index="2" to="/centers" @click="handleAggregation()">
+    <el-menu-item index="1" router-link-active="is-active"  @click="handleAggregation()">
       <i class="el-icon-menu"></i>
       <span>Aggregation Centers</span>
+    </el-menu-item>
+    <el-menu-item index="2" to="/centers" @click="handleAggregation()">
+      <i class="el-icon-menu"></i>
+      <span>Products</span>
     </el-menu-item>
     <el-submenu index="1">
       <template slot="title"><i class="el-icon-message"></i>Navigator One</template>
@@ -22,7 +26,7 @@
         <el-menu-item index="1-4-1">Option 4-1</el-menu-item>
       </el-submenu>
     </el-submenu>
-    <el-submenu index="2">
+    <el-submenu index="6">
       <template slot="title"><i class="el-icon-menu"></i>Navigator Two</template>
       <el-menu-item-group>
         <template slot="title">Group 1</template>
