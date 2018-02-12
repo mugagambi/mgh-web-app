@@ -1,8 +1,8 @@
 <template>
   <el-menu
-    background-color="#545c64"
-    text-color="#fff"
-    active-text-color="#ffd04b">
+    background-color="#78EFB2"
+    text-color="#020202"
+    active-text-color="#020202">
     <el-menu-item index="1" router-link-active="is-active"  @click="handleAggregation()">
       <i class="el-icon-menu"></i>
       <span>Aggregation Centers</span>
