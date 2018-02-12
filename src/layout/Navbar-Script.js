@@ -11,6 +11,9 @@ export default {
     },
     handleHome () {
       this.$router.push({ path: '/' })
+    },
+    handleLogin () {
+      this.$router.push({ path: '/login' })
     }
   }
 }

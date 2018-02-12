@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
+import { isLoggedIn } from '../components/auth/auth'
 import HelloWorld from '@/components/HelloWorld'
 import Centers from '@/components/aggregation-centers/index'
 import CreateCenter from '@/components/aggregation-centers/create'
@@ -7,9 +8,19 @@ import UpdateCenter from '@/components/aggregation-centers/update'
 import Products from '@/components/products/products'
 import CreateProduct from '@/components/products/create'
 import UpdateProduct from '@/components/products/update'
+import Login from '@/components/auth/Login'
 
 Vue.use(Router)
-
+function requireAuth (to, from, next) {
+  if (!isLoggedIn()) {
+    next({
+      path: '/login',
+      query: { redirect: to.fullPath }
+    })
+  } else {
+    next()
+  }
+}
 export default new Router({
   routes: [
     {
@@ -20,21 +31,25 @@ export default new Router({
     {
       path: '/centers',
       name: 'Centers',
-      component: Centers
+      component: Centers,
+      beforeEnter: requireAuth
     },
     {
       path: '/centers/add',
       name: 'CreateCenter',
+      beforeEnter: requireAuth,
       component: CreateCenter
     },
     {
       path: '/centers/:id/edit',
       name: 'UpdateCenter',
+      beforeEnter: requireAuth,
       component: UpdateCenter
     },
     {
       path: '/products',
       name: 'Products',
+      beforeEnter: requireAuth,
       component: Products
     },
     {
@@ -45,7 +60,13 @@ export default new Router({
     {
       path: '/products/:id/edit',
       name: 'UpdateProduct',
+      beforeEnter: requireAuth,
       component: UpdateProduct
+    },
+    {
+      path: '/login',
+      name: 'LogIn',
+      component: Login
     }
   ]
 })
