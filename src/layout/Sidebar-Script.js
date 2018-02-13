@@ -15,6 +15,9 @@ export default {
     },
     handleCrates: function () {
       this.$router.push({ path: '/crates' })
+    },
+    handleGrades: function () {
+      this.$router.push({path: '/grades'})
     }
   }
 }

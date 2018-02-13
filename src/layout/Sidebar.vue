@@ -21,6 +21,10 @@
         <el-menu-item index="3-2" @click="handleCrates()">Crates</el-menu-item>
       </el-menu-item-group>
     </el-submenu>
+    <el-menu-item index="2" @click="handleGrades()">
+      <i class="el-icon-menu"></i>
+      <span>Grades</span>
+    </el-menu-item>
     <el-submenu index="8">
       <template slot="title"><i class="el-icon-message"></i>Navigator One</template>
       <el-menu-item-group>

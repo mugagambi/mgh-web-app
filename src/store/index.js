@@ -6,6 +6,7 @@ import user from './modules/auth'
 import aggregationProducts from './modules/aggregation-products'
 import crateTypes from './modules/crates-types'
 import Crates from './modules/crates'
+import Grades from './modules/grades'
 
 Vue.use(vuex)
 const debug = process.env.NODE_ENV !== 'production'
@@ -16,7 +17,8 @@ export default new vuex.Store({
     user,
     aggregationProducts,
     crateTypes,
-    Crates
+    Crates,
+    Grades
   },
   strict: debug
 })
