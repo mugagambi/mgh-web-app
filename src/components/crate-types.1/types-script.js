@@ -46,7 +46,7 @@ export default {
         })
     },
     handleAdd () {
-      this.$router.push({ path: '/crate-types/add' })
+      this.$router.push({ path: 'products/add' })
     }
   }
 }

@@ -9,10 +9,10 @@ export const fetchCrateTpes = () => {
       return Promise.reject(e)
     })
 }
-export const addProducts = data => {
+export const addCrateType = data => {
   return HTTP({
     method: 'post',
-    url: 'core/products/',
+    url: 'core/crate-types/',
     data: data
   })
     .then(response => Promise.resolve(response.data))

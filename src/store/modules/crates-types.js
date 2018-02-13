@@ -1,6 +1,6 @@
 import {
   fetchCrateTpes,
-  addProducts,
+  addCrateType,
   removeProduct,
   updateProducts
 } from '../../http/Crate-types'
@@ -19,7 +19,7 @@ const getters = {
 
 // mutation-types
 const FETCH_CRATE_TYPES = 'FETCH_CRATE_TYPES'
-const ADD_PRODUCT = 'ADD_PRODUCT'
+const ADD_CRATE_TYPE = 'ADD_CRATE_TYPE'
 const REMOVE_PRODUCT = 'REMOVE_PRODUCT'
 const UPDATE_PRODUCT = 'UPDATE_PRODUCT'
 
@@ -28,8 +28,8 @@ const actions = {
   async fetchCrateTpes ({ commit, state }, crateTypes) {
     await fetchCrateTpes().then(response => commit(FETCH_CRATE_TYPES, response))
   },
-  async addProduct ({ commit, state }, crateType) {
-    await addProducts(crateType).then(response => commit(ADD_PRODUCT, response))
+  async addCrateTypeAction ({ commit, state }, crateType) {
+    await addCrateType(crateType).then(response => commit(ADD_CRATE_TYPE, response))
   },
   async removeProduct ({ commit, state }, id) {
     await removeProduct(id).then(response => commit(REMOVE_PRODUCT, id))
@@ -45,7 +45,7 @@ const mutations = {
   [FETCH_CRATE_TYPES] (state, crateTypes) {
     state.crateTypes = crateTypes
   },
-  [ADD_PRODUCT] (state, crateType) {
+  [ADD_CRATE_TYPE] (state, crateType) {
     state.crateTypes.push(crateType)
   },
   [REMOVE_PRODUCT] (state, id) {
