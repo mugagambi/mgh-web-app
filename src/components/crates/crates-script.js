@@ -21,7 +21,7 @@ export default {
   methods: {
     ...mapActions(['fetchCratesAction', 'removeCrateAction', 'fetchCrateTpes']),
     handleEdit: function (index, row) {
-      this.$router.push({ name: 'UpdateCrateType', params: { id: row.id } })
+      this.$router.push({ name: 'UpdateCrates', params: { id: row.id } })
     },
     handleDelete: function (index, row) {
       this.$confirm(

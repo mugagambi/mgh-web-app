@@ -27,10 +27,10 @@ export const removeCrateAction = id => {
     .then(response => Promise.resolve(response.data))
     .catch(e => Promise.reject(e))
 }
-export const updateCrateType = (id, data) => {
+export const updateCrate = (id, data) => {
   return HTTP({
     method: 'put',
-    url: `core/crate-types/${id}`,
+    url: `core/crates/${id}`,
     data: data
   })
     .then(response => Promise.resolve(response.data))

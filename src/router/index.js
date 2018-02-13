@@ -17,6 +17,7 @@ import CreateCrateType from '@/components/crate-types/create'
 import UpdateCrateType from '@/components/crate-types/update'
 import Crates from '@/components/crates/crates'
 import CreateCrate from '@/components/crates/create'
+import UpdateCrate from '@/components/crates/update'
 
 Vue.use(Router)
 function requireAuth (to, from, next) {
@@ -120,6 +121,12 @@ export default new Router({
       path: '/crates/add',
       name: 'CreateCrate',
       component: CreateCrate
+    },
+    {
+      path: '/crates/:id/edit',
+      name: 'UpdateCrates',
+      beforeEnter: requireAuth,
+      component: UpdateCrate
     }
   ]
 })

@@ -2,7 +2,7 @@ import {
   fetchCrates,
   addCrate,
   removeCrateAction,
-  updateCrateType
+  updateCrate
 } from '../../http/crates'
 // initial state
 const state = {
@@ -21,7 +21,7 @@ const getters = {
 const FETCH_CRATES = 'FETCH_CRATES'
 const ADD_CRATE = 'ADD_CRATE'
 const REMOVE_CRATE = 'REMOVE_CRATE'
-const UPDATE_CRATE_TYPE = 'UPDATE_CRATE_TYPE'
+const UPDATE_CRATE = 'UPDATE_CRATE'
 
 // actions
 const actions = {
@@ -36,9 +36,9 @@ const actions = {
   async removeCrateAction ({ commit, state }, id) {
     await removeCrateAction(id).then(response => commit(REMOVE_CRATE, id))
   },
-  async updateCrateTypeAction ({ commit, state }, form) {
-    await updateCrateType(form.id, form).then(response => {
-      commit(UPDATE_CRATE_TYPE, response)
+  async updateCrateAction ({ commit, state }, form) {
+    await updateCrate(form.id, form).then(response => {
+      commit(UPDATE_CRATE, response)
     })
   }
 }
@@ -53,7 +53,7 @@ const mutations = {
   [REMOVE_CRATE] (state, id) {
     state.crates = state.crates.filter(t => t.id !== id)
   },
-  [UPDATE_CRATE_TYPE] (state, crate) {
+  [UPDATE_CRATE] (state, crate) {
     const index = state.crates.findIndex(t => t.id === crate.id)
     if (index !== -1) {
       // We need to replace the array entirely so that vue can recognize
