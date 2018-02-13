@@ -12,6 +12,7 @@ import Login from '@/components/auth/Login'
 import AggregationProducts from '@/components/aggregation-products/products'
 import CreateAgggregationProduct from '@/components/aggregation-products/create'
 import UpdateAggregationProduct from '@/components/aggregation-products/update'
+import CrateTypes from '@/components/crate-types/types'
 
 Vue.use(Router)
 function requireAuth (to, from, next) {
@@ -87,6 +88,12 @@ export default new Router({
       name: 'UpdateAggregationProduct',
       beforeEnter: requireAuth,
       component: UpdateAggregationProduct
+    },
+    {
+      path: '/crate-types',
+      name: 'CrateTypes',
+      beforeEnter: requireAuth,
+      component: CrateTypes
     }
   ]
 })

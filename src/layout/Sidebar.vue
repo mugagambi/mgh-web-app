@@ -17,7 +17,7 @@
     <el-submenu index="3">
       <template slot="title"><i class="el-icon-menu"></i>Crates Management</template>
       <el-menu-item-group>
-        <el-menu-item index="3-1" @click="handleAggregation()">Crate Types</el-menu-item>
+        <el-menu-item index="3-1" @click="handleCrateTypes()">Crate Types</el-menu-item>
         <el-menu-item index="3-2" @click="handleAggregationProducts()">Crates</el-menu-item>
       </el-menu-item-group>
     </el-submenu>

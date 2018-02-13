@@ -8,7 +8,10 @@ export default {
       this.$router.push({ path: '/products' })
     },
     handleAggregationProducts: function () {
-      this.$router.push({path: '/aggregation-products'})
+      this.$router.push({ path: '/aggregation-products' })
+    },
+    handleCrateTypes: function () {
+      this.$router.push({ path: '/crate-types' })
     }
   }
 }
