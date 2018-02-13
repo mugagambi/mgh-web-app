@@ -16,7 +16,7 @@ export default {
     tableData: 'allCrateTypes'
   }),
   methods: {
-    ...mapActions(['fetchCrateTpes', 'removeProduct']),
+    ...mapActions(['fetchCrateTpes', 'removeCrateTypeAction']),
     handleEdit: function (index, row) {
       this.$router.push({ name: 'UpdateProduct', params: { id: row.id } })
     },
@@ -31,7 +31,7 @@ export default {
         }
       )
         .then(() => {
-          this.removeProduct(row.id).then(() => {
+          this.removeCrateTypeAction(row.id).then(() => {
             this.$message({
               type: 'success',
               message: 'Crate Type removed'

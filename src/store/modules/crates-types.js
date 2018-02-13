@@ -1,7 +1,7 @@
 import {
   fetchCrateTpes,
   addCrateType,
-  removeProduct,
+  removeCrateType,
   updateProducts
 } from '../../http/Crate-types'
 // initial state
@@ -20,7 +20,7 @@ const getters = {
 // mutation-types
 const FETCH_CRATE_TYPES = 'FETCH_CRATE_TYPES'
 const ADD_CRATE_TYPE = 'ADD_CRATE_TYPE'
-const REMOVE_PRODUCT = 'REMOVE_PRODUCT'
+const REMOVE_CRATE_TYPE = 'REMOVE_CRATE_TYPE'
 const UPDATE_PRODUCT = 'UPDATE_PRODUCT'
 
 // actions
@@ -31,8 +31,8 @@ const actions = {
   async addCrateTypeAction ({ commit, state }, crateType) {
     await addCrateType(crateType).then(response => commit(ADD_CRATE_TYPE, response))
   },
-  async removeProduct ({ commit, state }, id) {
-    await removeProduct(id).then(response => commit(REMOVE_PRODUCT, id))
+  async removeCrateTypeAction ({ commit, state }, id) {
+    await removeCrateType(id).then(response => commit(REMOVE_CRATE_TYPE, id))
   },
   async updateProduct ({ commit, state }, form) {
     await updateProducts(form.id, form).then(response => {
@@ -48,11 +48,11 @@ const mutations = {
   [ADD_CRATE_TYPE] (state, crateType) {
     state.crateTypes.push(crateType)
   },
-  [REMOVE_PRODUCT] (state, id) {
-    state.crateTypes = state.crateTypes.filter(p => p.id !== id)
+  [REMOVE_CRATE_TYPE] (state, id) {
+    state.crateTypes = state.crateTypes.filter(t => t.id !== id)
   },
   [UPDATE_PRODUCT] (state, crateType) {
-    const index = state.crateTypes.findIndex(p => p.id === crateType.id)
+    const index = state.crateTypes.findIndex(t => t.id === crateType.id)
     if (index !== -1) {
       // We need to replace the array entirely so that vue can recognize
       // the change and re-render entirely.

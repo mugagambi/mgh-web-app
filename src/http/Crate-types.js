@@ -19,10 +19,10 @@ export const addCrateType = data => {
     .catch(e => Promise.reject(e))
 }
 
-export const removeProduct = id => {
+export const removeCrateType = id => {
   return HTTP({
     method: 'delete',
-    url: `core/products/${id}`
+    url: `core/crate-types/${id}`
   })
     .then(response => Promise.resolve(response.data))
     .catch(e => Promise.reject(e))
