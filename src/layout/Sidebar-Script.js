@@ -12,6 +12,9 @@ export default {
     },
     handleCrateTypes: function () {
       this.$router.push({ path: '/crate-types' })
+    },
+    handleCrates: function () {
+      this.$router.push({ path: '/crates' })
     }
   }
 }

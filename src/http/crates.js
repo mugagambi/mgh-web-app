@@ -1,0 +1,38 @@
+import HTTP from './Http'
+
+export const fetchCrates = () => {
+  return HTTP.get(`core/crates/`)
+    .then(response => {
+      return Promise.resolve(response.data)
+    })
+    .catch(e => {
+      return Promise.reject(e)
+    })
+}
+export const addCrateType = data => {
+  return HTTP({
+    method: 'post',
+    url: 'core/crate-types/',
+    data: data
+  })
+    .then(response => Promise.resolve(response.data))
+    .catch(e => Promise.reject(e))
+}
+
+export const removeCrateType = id => {
+  return HTTP({
+    method: 'delete',
+    url: `core/crate-types/${id}`
+  })
+    .then(response => Promise.resolve(response.data))
+    .catch(e => Promise.reject(e))
+}
+export const updateCrateType = (id, data) => {
+  return HTTP({
+    method: 'put',
+    url: `core/crate-types/${id}`,
+    data: data
+  })
+    .then(response => Promise.resolve(response.data))
+    .catch(e => Promise.reject(e))
+}
