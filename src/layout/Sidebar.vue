@@ -1,6 +1,6 @@
 <template>
   <el-menu
-    background-color="#78EFB2"
+    background-color="#84CE84"
     text-color="#020202"
     active-text-color="#020202">
     <el-submenu index="1">
@@ -14,6 +14,13 @@
       <i class="el-icon-menu"></i>
       <span>Products</span>
     </el-menu-item>
+    <el-submenu index="3">
+      <template slot="title"><i class="el-icon-menu"></i>Crates Management</template>
+      <el-menu-item-group>
+        <el-menu-item index="3-1" @click="handleAggregation()">Crate Types</el-menu-item>
+        <el-menu-item index="3-2" @click="handleAggregationProducts()">Crates</el-menu-item>
+      </el-menu-item-group>
+    </el-submenu>
     <el-submenu index="8">
       <template slot="title"><i class="el-icon-message"></i>Navigator One</template>
       <el-menu-item-group>

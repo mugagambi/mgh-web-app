@@ -2,6 +2,13 @@
     <el-row :gutter="20">
     <el-col :span="12" :offset="4">
         <h3 style="text-align: center">Log in <small>To start using the system</small></h3>
+        <el-alert v-if="error"
+          title="error"
+          type="error"
+          :description="error"
+          show-icon>
+      </el-alert>
+      <br>
         <el-form :model="ruleForm" :rules="rules" ref="ruleForm" label-width="120px" class="demo-ruleForm">
   <el-form-item label="Username" prop="username">
     <el-input v-model="ruleForm.username"></el-input>

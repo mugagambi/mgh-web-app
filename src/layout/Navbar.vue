@@ -1,6 +1,6 @@
 <template>
   <el-menu :default-active="activeIndex" mode="horizontal" @select="handleSelect"
-  background-color="#78EFB2"
+  background-color="#84CE84"
     text-color="#020202"
     active-text-color="#020202">
   <el-menu-item index="1" @click="handleHome()">Home</el-menu-item>

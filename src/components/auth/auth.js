@@ -5,25 +5,39 @@ import decode from 'jwt-decode'
 /* global  localStorage:true */
 
 export function login (context, credentials, redirect) {
-  logIn(credentials).then(response => {
-    context.loading = false
-    localStorage.setItem('token', response.token)
-    getUser().then(response => {
-      context.$store.dispatch('storeUser', response).then(() => {
-        context.$notify({
-          title: 'Success',
-          message: 'Welcome',
-          type: 'success',
-          duration: 5000
+  logIn(credentials)
+    .then(response => {
+      context.loading = false
+      localStorage.setItem('token', response.token)
+      getUser().then(response => {
+        context.$store.dispatch('storeUser', response).then(() => {
+          context.$notify({
+            title: 'Success',
+            message: 'Welcome',
+            type: 'success',
+            duration: 5000
+          })
+          if (redirect) {
+            router.push(redirect)
+          } else {
+            router.push({ path: '/' })
+          }
         })
-        if (redirect) {
-          router.push(redirect)
-        } else {
-          router.push({ path: '/' })
-        }
       })
     })
-  })
+    .catch(function (error) {
+      context.ruleForm.username = ''
+      context.ruleForm.password = ''
+      if (error.response) {
+        // The request was made and the server responded with a status code
+        // that falls out of the range of 2xx
+        context.error = error.response.data.non_field_errors[0]
+      } else {
+        // Something happened in setting up the request that triggered an Error
+        context.error = error.message
+      }
+      context.loading = false
+    })
 }
 export function isLoggedIn () {
   return !!localStorage.token && !isTokenExpired(localStorage.getItem('token'))

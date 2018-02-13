@@ -7,6 +7,7 @@ export default {
         username: '',
         password: ''
       },
+      error: null,
       loading: false,
       rules: {
         username: [
