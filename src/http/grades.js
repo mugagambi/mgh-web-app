@@ -9,10 +9,10 @@ export const fetchGrades = () => {
       return Promise.reject(e)
     })
 }
-export const addCrate = data => {
+export const addGrade = data => {
   return HTTP({
     method: 'post',
-    url: 'core/crates/',
+    url: 'core/grades/',
     data: data
   })
     .then(response => Promise.resolve(response.data))

@@ -19,6 +19,7 @@ import Crates from '@/components/crates/crates'
 import CreateCrate from '@/components/crates/create'
 import UpdateCrate from '@/components/crates/update'
 import Grades from '@/components/grades/grades'
+import CreateGrade from '@/components/grades/create'
 
 Vue.use(Router)
 function requireAuth (to, from, next) {
@@ -134,6 +135,11 @@ export default new Router({
       name: 'Grades',
       beforeEnter: requireAuth,
       component: Grades
+    },
+    {
+      path: '/grades/add',
+      name: 'CreateGrade',
+      component: CreateGrade
     }
   ]
 })

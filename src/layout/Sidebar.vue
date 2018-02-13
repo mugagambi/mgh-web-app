@@ -19,57 +19,50 @@
       <el-menu-item-group>
         <el-menu-item index="3-1" @click="handleCrateTypes()">Crate Types</el-menu-item>
         <el-menu-item index="3-2" @click="handleCrates()">Crates</el-menu-item>
+        <el-menu-item index="3-2" @click="handleCrates()">Sales Crates</el-menu-item>        
       </el-menu-item-group>
     </el-submenu>
-    <el-menu-item index="2" @click="handleGrades()">
+    <el-menu-item index="4" @click="handleGrades()">
       <i class="el-icon-menu"></i>
       <span>Grades</span>
     </el-menu-item>
-    <el-submenu index="8">
-      <template slot="title"><i class="el-icon-message"></i>Navigator One</template>
+    <el-submenu index="5">
+      <template slot="title"><i class="el-icon-menu"></i>Customer Mgmt</template>
       <el-menu-item-group>
-        <template slot="title">Group 1</template>
-        <el-menu-item index="1-1">Option 1</el-menu-item>
-        <el-menu-item index="1-2">Option 2</el-menu-item>
+        <el-menu-item index="5-1" @click="handleCrateTypes()">Customer Regions</el-menu-item>
+        <el-menu-item index="5-2" @click="handleCrates()">Customers</el-menu-item>
+        <el-menu-item index="5-3" @click="handleCrates()">Customer Prices</el-menu-item>        
+        <el-menu-item index="5-4" @click="handleCrates()">Customer Discounts</el-menu-item>                
       </el-menu-item-group>
-      <el-menu-item-group title="Group 2">
-        <el-menu-item index="1-3">Option 3</el-menu-item>
-      </el-menu-item-group>
-      <el-submenu index="1-4">
-        <template slot="title">Option4</template>
-        <el-menu-item index="1-4-1">Option 4-1</el-menu-item>
-      </el-submenu>
     </el-submenu>
     <el-submenu index="6">
-      <template slot="title"><i class="el-icon-menu"></i>Navigator Two</template>
+      <template slot="title"><i class="el-icon-menu"></i>Order Management</template>
       <el-menu-item-group>
-        <template slot="title">Group 1</template>
-        <el-menu-item index="2-1">Option 1</el-menu-item>
-        <el-menu-item index="2-2">Option 2</el-menu-item>
+        <el-menu-item index="6-1" @click="handleCrateTypes()">Place Order</el-menu-item>
+        <el-menu-item index="6-2" @click="handleCrates()">Orders</el-menu-item>
+        <el-menu-item index="6-3" @click="handleCrates()">Package Crates</el-menu-item>        
       </el-menu-item-group>
-      <el-menu-item-group title="Group 2">
-        <el-menu-item index="2-3">Option 3</el-menu-item>
-      </el-menu-item-group>
-      <el-submenu index="2-4">
-        <template slot="title">Option 4</template>
-        <el-menu-item index="2-4-1">Option 4-1</el-menu-item>
-      </el-submenu>
     </el-submenu>
-    <el-submenu index="3">
-      <template slot="title"><i class="el-icon-setting"></i>Navigator Three</template>
-      <el-menu-item-group>
-        <template slot="title">Group 1</template>
-        <el-menu-item index="3-1">Option 1</el-menu-item>
-        <el-menu-item index="3-2">Option 2</el-menu-item>
-      </el-menu-item-group>
-      <el-menu-item-group title="Group 2">
-        <el-menu-item index="3-3">Option 3</el-menu-item>
-      </el-menu-item-group>
-      <el-submenu index="3-4">
-        <template slot="title">Option 4</template>
-        <el-menu-item index="3-4-1">Option 4-1</el-menu-item>
-      </el-submenu>
-    </el-submenu>
+    <el-menu-item index="7" @click="handleGrades()">
+      <i class="el-icon-menu"></i>
+      <span>Receipts</span>
+    </el-menu-item>
+    <el-menu-item index="8" @click="handleGrades()">
+      <i class="el-icon-menu"></i>
+      <span>Cash Sale Receipts</span>
+    </el-menu-item>
+    <el-menu-item index="9" @click="handleGrades()">
+      <i class="el-icon-menu"></i>
+      <span>Credit Settlements</span>
+    </el-menu-item>
+    <el-menu-item index="10" @click="handleGrades()">
+      <i class="el-icon-menu"></i>
+      <span>Over/Under Pay</span>
+    </el-menu-item>
+    <el-menu-item index="11" @click="handleGrades()">
+      <i class="el-icon-menu"></i>
+      <span>Returns</span>
+    </el-menu-item>
   </el-menu>
 </template>
 <script src="./Sidebar-Script.js">

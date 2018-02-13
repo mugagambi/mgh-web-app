@@ -5,16 +5,14 @@ export default {
       type: Object,
       default: function () {
         return {
-          aggregation_center: null,
-          product: null,
-          active: true
+          name: ''
         }
       }
     },
     message: {
       type: String,
       default: function () {
-        return 'Add Aggregation Center Product'
+        return 'Add Grade'
       }
     },
     add: {
@@ -33,17 +31,11 @@ export default {
   data () {
     return {
       rules: {
-        aggregation_center: [
-          { required: true, message: 'Please Aggregation Center', trigger: 'change' }
-        ],
-        product: [
-          { required: true, message: 'Please select Product', trigger: 'change' }
+        number: [
+          { required: true, message: 'Please input Grade', trigger: 'blur' }
         ]
       }
     }
-  },
-  created () {
-    this.$store.dispatch('fetchProducts')
   },
   methods: {
     submitForm (formName) {

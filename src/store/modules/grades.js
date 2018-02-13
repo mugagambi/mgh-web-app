@@ -1,6 +1,6 @@
 import {
   fetchGrades,
-  addCrate,
+  addGrade,
   removeCrateAction,
   updateCrate
 } from '../../http/grades'
@@ -19,7 +19,7 @@ const getters = {
 
 // mutation-types
 const FETCH_GRADES = 'FETCH_GRADES'
-const ADD_CRATE = 'ADD_CRATE'
+const ADD_GRADE = 'ADD_GRADE'
 const REMOVE_CRATE = 'REMOVE_CRATE'
 const UPDATE_CRATE = 'UPDATE_CRATE'
 
@@ -28,8 +28,8 @@ const actions = {
   async fetchGradesAction ({ commit, state }, grades) {
     await fetchGrades().then(response => commit(FETCH_GRADES, response))
   },
-  async addCrateAction ({ commit, state }, grade) {
-    await addCrate(grade).then(response => commit(ADD_CRATE, response))
+  async addGradeAction ({ commit, state }, grade) {
+    await addGrade(grade).then(response => commit(ADD_GRADE, response))
   },
   async removeCrateAction ({ commit, state }, id) {
     await removeCrateAction(id).then(response => commit(REMOVE_CRATE, id))
@@ -45,7 +45,7 @@ const mutations = {
   [FETCH_GRADES] (state, grades) {
     state.grades = grades
   },
-  [ADD_CRATE] (state, grade) {
+  [ADD_GRADE] (state, grade) {
     state.grades.push(grade)
   },
   [REMOVE_CRATE] (state, id) {

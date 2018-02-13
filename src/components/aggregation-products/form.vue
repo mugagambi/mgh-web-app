@@ -10,7 +10,7 @@
     </el-select>
   </el-form-item>
   <el-form-item label="Product" prop="product">
-    <el-select v-model="ruleForm.product" placeholder="please select Product">
+    <el-select multiple v-model="ruleForm.product" placeholder="please select Products">
       <el-option v-for="option in $store.getters.allProducts" v-bind:key="option.id" v-bind:value="option.id" :label="option.name"></el-option>
     </el-select>
   </el-form-item>

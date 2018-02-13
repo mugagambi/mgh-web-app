@@ -4,6 +4,7 @@
   "description": "mgh system web app",
   "author": "Humphrey Mugambi <mugagambi@gmail.com>",
   "private": true,
+  "main": "electron.js",
   "scripts": {
     "dev": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
     "start": "npm run dev",
@@ -13,6 +14,7 @@
   "dependencies": {
     "@websanova/vue-auth": "^2.21.2-beta",
     "axios": "^0.17.1",
+    "electron": "^1.8.2",
     "element-ui": "^2.1.0",
     "jwt-decode": "^2.2.0",
     "vue": "^2.5.2",

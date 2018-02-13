@@ -46,7 +46,7 @@ export default {
         })
     },
     handleAdd () {
-      this.$router.push({ path: '/crates/add' })
+      this.$router.push({ path: '/grades/add' })
     }
   }
 }

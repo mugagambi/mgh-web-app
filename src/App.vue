@@ -5,7 +5,7 @@
   <el-container>
     <el-header><navbar/></el-header>
     <el-main><router-view/></el-main>
-    <el-footer>Footer</el-footer>
+    <el-footer style="text-align: center">&copy 2018, Meru Greens Horticulture Ltd</el-footer>
   </el-container>
 </el-container>
   </div>
