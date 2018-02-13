@@ -9,20 +9,20 @@ export const fetchCrates = () => {
       return Promise.reject(e)
     })
 }
-export const addCrateType = data => {
+export const addCrate = data => {
   return HTTP({
     method: 'post',
-    url: 'core/crate-types/',
+    url: 'core/crates/',
     data: data
   })
     .then(response => Promise.resolve(response.data))
     .catch(e => Promise.reject(e))
 }
 
-export const removeCrateType = id => {
+export const removeCrateAction = id => {
   return HTTP({
     method: 'delete',
-    url: `core/crate-types/${id}`
+    url: `core/crates/${id}`
   })
     .then(response => Promise.resolve(response.data))
     .catch(e => Promise.reject(e))

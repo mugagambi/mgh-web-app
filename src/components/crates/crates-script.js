@@ -19,13 +19,13 @@ export default {
     tableData: 'allCrates'
   }),
   methods: {
-    ...mapActions(['fetchCratesAction', 'removeCrateTypeAction', 'fetchCrateTpes']),
+    ...mapActions(['fetchCratesAction', 'removeCrateAction', 'fetchCrateTpes']),
     handleEdit: function (index, row) {
       this.$router.push({ name: 'UpdateCrateType', params: { id: row.id } })
     },
     handleDelete: function (index, row) {
       this.$confirm(
-        'This will permanently remove the Crate Type. Continue?',
+        'This will permanently remove the Crate. Continue?',
         'Warning',
         {
           confirmButtonText: 'OK',
@@ -34,10 +34,10 @@ export default {
         }
       )
         .then(() => {
-          this.removeCrateTypeAction(row.id).then(() => {
+          this.removeCrateAction(row.id).then(() => {
             this.$message({
               type: 'success',
-              message: 'Crate Type removed'
+              message: 'Crate  removed'
             })
           })
         })
@@ -49,7 +49,7 @@ export default {
         })
     },
     handleAdd () {
-      this.$router.push({ path: '/crate-types/add' })
+      this.$router.push({ path: '/crates/add' })
     }
   }
 }

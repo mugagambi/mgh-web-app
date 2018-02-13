@@ -1,7 +1,7 @@
 import {
   fetchCrates,
-  addCrateType,
-  removeCrateType,
+  addCrate,
+  removeCrateAction,
   updateCrateType
 } from '../../http/crates'
 // initial state
@@ -19,8 +19,8 @@ const getters = {
 
 // mutation-types
 const FETCH_CRATES = 'FETCH_CRATES'
-const ADD_CRATE_TYPE = 'ADD_CRATE_TYPE'
-const REMOVE_CRATE_TYPE = 'REMOVE_CRATE_TYPE'
+const ADD_CRATE = 'ADD_CRATE'
+const REMOVE_CRATE = 'REMOVE_CRATE'
 const UPDATE_CRATE_TYPE = 'UPDATE_CRATE_TYPE'
 
 // actions
@@ -28,13 +28,13 @@ const actions = {
   async fetchCratesAction ({ commit, state }, crates) {
     await fetchCrates().then(response => commit(FETCH_CRATES, response))
   },
-  async addCrateTypeAction ({ commit, state }, crate) {
-    await addCrateType(crate).then(response =>
-      commit(ADD_CRATE_TYPE, response)
+  async addCrateAction ({ commit, state }, crate) {
+    await addCrate(crate).then(response =>
+      commit(ADD_CRATE, response)
     )
   },
-  async removeCrateTypeAction ({ commit, state }, id) {
-    await removeCrateType(id).then(response => commit(REMOVE_CRATE_TYPE, id))
+  async removeCrateAction ({ commit, state }, id) {
+    await removeCrateAction(id).then(response => commit(REMOVE_CRATE, id))
   },
   async updateCrateTypeAction ({ commit, state }, form) {
     await updateCrateType(form.id, form).then(response => {
@@ -47,10 +47,10 @@ const mutations = {
   [FETCH_CRATES] (state, crates) {
     state.crates = crates
   },
-  [ADD_CRATE_TYPE] (state, crate) {
+  [ADD_CRATE] (state, crate) {
     state.crates.push(crate)
   },
-  [REMOVE_CRATE_TYPE] (state, id) {
+  [REMOVE_CRATE] (state, id) {
     state.crates = state.crates.filter(t => t.id !== id)
   },
   [UPDATE_CRATE_TYPE] (state, crate) {
