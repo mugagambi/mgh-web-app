@@ -7,7 +7,9 @@ export default {
     }
   },
   created () {
-    this.loading = true
+    if (!this.tableData.length > 0) {
+      this.loading = true
+    }
     this.fetchProducts()
       .then(() => (this.loading = false))
       .catch(() => (this.loading = false))

@@ -19,7 +19,7 @@
       <el-menu-item-group>
         <el-menu-item index="3-1" @click="handleCrateTypes()">Crate Types</el-menu-item>
         <el-menu-item index="3-2" @click="handleCrates()">Crates</el-menu-item>
-        <el-menu-item index="3-2" @click="handleCrates()">Sales Crates</el-menu-item>        
+        <el-menu-item index="3-2" @click="handleCrates()">Sales Crates</el-menu-item>
       </el-menu-item-group>
     </el-submenu>
     <el-menu-item index="4" @click="handleGrades()">
@@ -31,8 +31,8 @@
       <el-menu-item-group>
         <el-menu-item index="5-1" @click="handleCrateTypes()">Customer Regions</el-menu-item>
         <el-menu-item index="5-2" @click="handleCrates()">Customers</el-menu-item>
-        <el-menu-item index="5-3" @click="handleCrates()">Customer Prices</el-menu-item>        
-        <el-menu-item index="5-4" @click="handleCrates()">Customer Discounts</el-menu-item>                
+        <el-menu-item index="5-3" @click="handleCrates()">Customer Prices</el-menu-item>
+        <el-menu-item index="5-4" @click="handleCrates()">Customer Discounts</el-menu-item>
       </el-menu-item-group>
     </el-submenu>
     <el-submenu index="6">
@@ -40,7 +40,7 @@
       <el-menu-item-group>
         <el-menu-item index="6-1" @click="handleCrateTypes()">Place Order</el-menu-item>
         <el-menu-item index="6-2" @click="handleCrates()">Orders</el-menu-item>
-        <el-menu-item index="6-3" @click="handleCrates()">Package Crates</el-menu-item>        
+        <el-menu-item index="6-3" @click="handleCrates()">Package Crates</el-menu-item>
       </el-menu-item-group>
     </el-submenu>
     <el-menu-item index="7" @click="handleGrades()">
