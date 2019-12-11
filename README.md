@@ -2,6 +2,8 @@
 
 > mgh system web app
 
+The project is in vue,Element UI https://element.eleme.io/#/en-US and Electron https://electronjs.org/.  
+It consumes the api provided by https://github.com/mugagambi/mgh-server
 ## Build Setup
 
 ``` bash
